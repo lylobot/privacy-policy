@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidad | Mi Bot de Discord</title>
+    <style>
+      :root {
+        --bg-1: #edf5ff;
+        --bg-2: #e2eefc;
+        --bg-3: #dfeaff;
+        --panel: rgba(255, 255, 255, 0.9);
+        --panel-soft: rgba(244, 248, 255, 0.85);
+        --primary: #5a8def;
+        --primary-strong: #376ad8;
+        --primary-soft: rgba(90, 141, 239, 0.12);
+        --text: #1e2b3a;
+        --muted: #57657b;
+        --line: rgba(88, 110, 147, 0.18);
+        --shadow: rgba(88, 110, 147, 0.16);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, var(--bg-1), var(--bg-2) 42%, var(--bg-3));
+        color: var(--text);
+        line-height: 1.75;
+      }
+
+      .container {
+        max-width: 980px;
+        margin: 60px auto;
+        padding: 32px 28px 24px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: 0 18px 40px var(--shadow);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .brand-image {
+        width: 92px;
+        height: 92px;
+        border-radius: 22px;
+        object-fit: cover;
+        border: 2px solid rgba(55, 106, 216, 0.18);
+        box-shadow: 0 12px 28px rgba(88, 110, 147, 0.18);
+        background: #fff;
+      }
+
+      .lang-switch {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .flag-btn {
+        width: 42px;
+        height: 42px;
+        border: 2px solid rgba(55, 106, 216, 0.18);
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        background: transparent;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .flag-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      }
+
+      .flag-btn.active {
+        border-color: var(--primary-strong);
+        box-shadow: 0 0 0 3px rgba(90, 141, 239, 0.18);
+      }
+
+      .flag-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 7px 14px;
+        background: var(--primary-soft);
+        border: 1px solid rgba(90, 141, 239, 0.2);
+        border-radius: 999px;
+        color: var(--primary-strong);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+        color: #1d2d3f;
+      }
+
+      h2 {
+        font-size: 1.28rem;
+        margin-top: 34px;
+        margin-bottom: 12px;
+        color: #1e2d3f;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+        margin-top: 18px;
+        margin-bottom: 8px;
+        color: #2d3d52;
+      }
+
+      p, li {
+        color: var(--text);
+        font-size: 1rem;
+      }
+
+      ul, ol { padding-left: 22px; }
+
+      .muted { color: var(--muted); }
+
+      .notice {
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--primary);
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin: 26px 0;
+        color: #33475f;
+      }
+
+      .footer {
+        margin-top: 32px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      strong { color: #1d2a3c; }
+
+      @media (max-width: 640px) {
+        .container {
+          margin: 24px 16px;
+          padding: 24px 18px 18px;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="flag-btn active" data-lang="es" aria-label="Cambiar a español">
+          <img src="https://flagcdn.com/w80/es.png" alt="España" />
+        </button>
+        <button class="flag-btn" data-lang="en" aria-label="Switch to English">
+          <img src="https://flagcdn.com/w80/gb.png" alt="English" />
+        </button>
+      </div>
+
+      <div class="topbar">
+        <img class="brand-image" src="bot-image.png" alt="Logo del bot Lylo" />
+        <div>
+          <div class="badge" data-i18n="badge">Política de Privacidad</div>
+          <h1 data-i18n="title">Lylo</h1>
+        </div>
+      </div>
+
+      <p class="muted" data-i18n="updated">Última actualización: 17 de septiembre de 2026</p>
+
+      <div class="notice" data-i18n="intro">
+        Esta política explica cómo usamos la información de nuestros usuarios cuando interactúan con el bot de Discord.
+        Nuestro objetivo es ser transparentes y cuidar la privacidad de la comunidad que usa el bot.
+      </div>
+
+      <h2 data-i18n="sec1_title">1. Información que recopilamos</h2>
+      <p data-i18n="sec1_text">Para que el bot funcione correctamente, puede recopilar datos básicos como:</p>
+      <ul>
+        <li data-i18n="li1">ID de usuario, servidor y canal de Discord.</li>
+        <li data-i18n="li2">Nombre de usuario y avatar público.</li>
+        <li data-i18n="li3">Comandos usados y fechas de uso.</li>
+        <li data-i18n="li4">Mensajes o contenido necesarios para funciones específicas, como moderación o registro.</li>
+        <li data-i18n="li5">Datos de configuración del servidor y permisos del bot.</li>
+        <li data-i18n="li6">Errores o registros técnicos para mejorar el servicio.</li>
+      </ul>
+
+      <p data-i18n="sec1_note">No pedimos información personal innecesaria ni sensible fuera de lo necesario para operar el bot.</p>
+
+      <h2 data-i18n="sec2_title">2. Cómo usamos esa información</h2>
+      <p data-i18n="sec2_text">La información se usa para:</p>
+      <ul>
+        <li data-i18n="li7">Hacer que el bot funcione correctamente.</li>
+        <li data-i18n="li8">Dar soporte a comandos, moderación y automatizaciones.</li>
+        <li data-i18n="li9">Detectar abuso, spam o comportamientos peligrosos.</li>
+        <li data-i18n="li10">Mejorar la estabilidad y corregir errores.</li>
+        <li data-i18n="li11">Responder a solicitudes de soporte o dudas del servidor.</li>
+      </ul>
+
+      <h2 data-i18n="sec3_title">3. No vendemos tus datos</h2>
+      <p data-i18n="sec3_text">
+        No vendemos, alquilamos ni compartimos tus datos personales con terceros para fines comerciales.
+        Solo podemos compartir información cuando sea necesario por seguridad, por una obligación legal o
+        para mantener el funcionamiento del servicio con proveedores confiables.
+      </p>
+
+      <h2 data-i18n="sec4_title">4. Almacenamiento</h2>
+      <p data-i18n="sec4_text">
+        Los datos se guardan en sistemas seguros y solo durante el tiempo necesario para cumplir la finalidad
+        del servicio. Si ya no se necesitan, se eliminan o se vuelven anónimos cuando es posible.
+      </p>
+
+      <h2 data-i18n="sec5_title">5. Seguridad</h2>
+      <p data-i18n="sec5_text">
+        Tomamos medidas razonables para proteger la información contra accesos no autorizados, pérdida o uso indebido.
+        Sin embargo, ninguna plataforma digital puede garantizar seguridad absoluta al 100%.
+      </p>
+
+      <h2 data-i18n="sec6_title">6. Derechos del usuario</h2>
+      <p data-i18n="sec6_text">Si quieres, puedes pedir información sobre los datos que tenemos sobre ti o solicitar su eliminación cuando corresponda.</p>
+      <p data-i18n="sec6_text2">También puedes contactar con el responsable del bot o con el administrador del servidor si tienes dudas sobre privacidad o datos.</p>
+
+      <h2 data-i18n="sec7_title">7. Menores de edad</h2>
+      <p data-i18n="sec7_text">
+        El bot no está pensado para ser usado por menores sin supervisión adecuada. No recopilamos información
+        personal de menores de manera intencional ni sin la autorización correcta.
+      </p>
+
+      <h2 data-i18n="sec8_title">8. Cambios en esta política</h2>
+      <p data-i18n="sec8_text">
+        Podemos actualizar esta política si cambia el funcionamiento del bot o si hay nuevas normativas. Cuando se haga,
+        se publicará la versión nueva y el uso continuo del bot significa que aceptas esos cambios.
+      </p>
+
+      <h2 data-i18n="sec9_title">9. Contacto</h2>
+      <p data-i18n="sec9_text">
+        Si tienes preguntas sobre esta política o sobre cómo se usan tus datos, puedes contactarte con el propietario del bot
+        o con el administrador del servidor donde está activo.
+      </p>
+
+      <div class="footer" data-i18n="footer">
+        Este documento está pensado para ser claro, transparente y fácil de entender para usuarios del bot de Discord.
+      </div>
+    </div>
+
+    <script>
+      const translations = {
+        es: {
+          badge: 'Política de Privacidad',
+          title: 'Lylo',
+          updated: 'Última actualización: 17 de septiembre de 2026',
+          intro: 'Esta política explica cómo usamos la información de nuestros usuarios cuando interactúan con el bot de Discord. Nuestro objetivo es ser transparentes y cuidar la privacidad de la comunidad que usa el bot.',
+          sec1_title: '1. Información que recopilamos',
+          sec1_text: 'Para que el bot funcione correctamente, puede recopilar datos básicos como:',
+          li1: 'ID de usuario, servidor y canal de Discord.',
+          li2: 'Nombre de usuario y avatar público.',
+          li3: 'Comandos usados y fechas de uso.',
+          li4: 'Mensajes o contenido necesarios para funciones específicas, como moderación o registro.',
+          li5: 'Datos de configuración del servidor y permisos del bot.',
+          li6: 'Errores o registros técnicos para mejorar el servicio.',
+          sec1_note: 'No pedimos información personal innecesaria ni sensible fuera de lo necesario para operar el bot.',
+          sec2_title: '2. Cómo usamos esa información',
+          sec2_text: 'La información se usa para:',
+          li7: 'Hacer que el bot funcione correctamente.',
+          li8: 'Dar soporte a comandos, moderación y automatizaciones.',
+          li9: 'Detectar abuso, spam o comportamientos peligrosos.',
+          li10: 'Mejorar la estabilidad y corregir errores.',
+          li11: 'Responder a solicitudes de soporte o dudas del servidor.',
+          sec3_title: '3. No vendemos tus datos',
+          sec3_text: 'No vendemos, alquilamos ni compartimos tus datos personales con terceros para fines comerciales. Solo podemos compartir información cuando sea necesario por seguridad, por una obligación legal o para mantener el funcionamiento del servicio con proveedores confiables.',
+          sec4_title: '4. Almacenamiento',
+          sec4_text: 'Los datos se guardan en sistemas seguros y solo durante el tiempo necesario para cumplir la finalidad del servicio. Si ya no se necesitan, se eliminan o se vuelven anónimos cuando es posible.',
+          sec5_title: '5. Seguridad',
+          sec5_text: 'Tomamos medidas razonables para proteger la información contra accesos no autorizados, pérdida o uso indebido. Sin embargo, ninguna plataforma digital puede garantizar seguridad absoluta al 100%.',
+          sec6_title: '6. Derechos del usuario',
+          sec6_text: 'Si quieres, puedes pedir información sobre los datos que tenemos sobre ti o solicitar su eliminación cuando corresponda.',
+          sec6_text2: 'También puedes contactar con el responsable del bot o con el administrador del servidor si tienes dudas sobre privacidad o datos.',
+          sec7_title: '7. Menores de edad',
+          sec7_text: 'El bot no está pensado para ser usado por menores sin supervisión adecuada. No recopilamos información personal de menores de manera intencional ni sin la autorización correcta.',
+          sec8_title: '8. Cambios en esta política',
+          sec8_text: 'Podemos actualizar esta política si cambia el funcionamiento del bot o si hay nuevas normativas. Cuando se haga, se publicará la versión nueva y el uso continuo del bot significa que aceptas esos cambios.',
+          sec9_title: '9. Contacto',
+          sec9_text: 'Si tienes preguntas sobre esta política o sobre cómo se usan tus datos, puedes contactarte con el propietario del bot o con el administrador del servidor donde está activo.',
+          footer: 'Este documento está pensado para ser claro, transparente y fácil de entender para usuarios del bot de Discord.'
+        },
+        en: {
+          badge: 'Privacy Policy',
+          title: 'Lylo',
+          updated: 'Last updated: September 17, 2026',
+          intro: 'This policy explains how we use information from users who interact with the Discord bot. Our goal is to be transparent and protect the privacy of the community using the bot.',
+          sec1_title: '1. Information we collect',
+          sec1_text: 'To keep the bot working properly, it may collect basic data such as:',
+          li1: 'Discord user, server, and channel IDs.',
+          li2: 'Username and public avatar.',
+          li3: 'Commands used and usage dates.',
+          li4: 'Messages or content needed for specific features such as moderation or logging.',
+          li5: 'Server settings and bot permissions.',
+          li6: 'Errors and technical logs to improve the service.',
+          sec1_note: 'We do not request unnecessary or sensitive personal information beyond what is needed to operate the bot.',
+          sec2_title: '2. How we use this information',
+          sec2_text: 'The information is used to:',
+          li7: 'Keep the bot running properly.',
+          li8: 'Support commands, moderation, and automations.',
+          li9: 'Detect abuse, spam, or harmful behavior.',
+          li10: 'Improve stability and fix bugs.',
+          li11: 'Respond to support requests or server questions.',
+          sec3_title: '3. We do not sell your data',
+          sec3_text: 'We do not sell, rent, or share your personal information with third parties for commercial purposes. We may share information only when necessary for security, legal obligations, or to maintain the service with trusted providers.',
+          sec4_title: '4. Storage',
+          sec4_text: 'Data is stored in secure systems only for as long as necessary to fulfill the purpose of the service. If it is no longer needed, it is deleted or anonymized when possible.',
+          sec5_title: '5. Security',
+          sec5_text: 'We take reasonable measures to protect information against unauthorized access, loss, or misuse. However, no digital platform can guarantee 100% absolute security.',
+          sec6_title: '6. User rights',
+          sec6_text: 'You can request information about the data we hold about you or ask for its deletion when applicable.',
+          sec6_text2: 'You can also contact the bot owner or server administrator if you have questions about privacy or data handling.',
+          sec7_title: '7. Minors',
+          sec7_text: 'The bot is not intended for use by minors without appropriate supervision. We do not intentionally collect personal information from minors without proper authorization.',
+          sec8_title: '8. Changes to this policy',
+          sec8_text: 'We may update this policy if the bot changes or if new regulations apply. When that happens, the new version will be published and continued use of the bot means you accept the updated policy.',
+          sec9_title: '9. Contact',
+          sec9_text: 'If you have questions about this policy or how your data is used, you can contact the bot owner or the administrator of the server where the bot is active.',
+          footer: 'This document is designed to be clear, transparent, and easy to understand for Discord bot users.'
+        }
+      };
+
+      const setLanguage = (lang) => {
+        document.documentElement.lang = lang;
+        const keys = document.querySelectorAll('[data-i18n]');
+        keys.forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll('.flag-btn').forEach((btn) => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+      };
+
+      document.querySelectorAll('.flag-btn').forEach((btn) => {
+        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      });
+    </script>
+  </body>
+</html>
